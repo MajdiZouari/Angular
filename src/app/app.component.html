@@ -2,11 +2,9 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Mes appareils</h2>
-      <ul class="list-group">
-        <app-appareil [appareilName]="appareilOne" [appareilStatus]="'éteint'"></app-appareil>
-        <app-appareil [appareilName]="appareilTwo" [appareilStatus]="'allumé'"></app-appareil>
-        <app-appareil [appareilName]="appareilThree" [appareilStatus]="'éteint'"></app-appareil>
-      </ul>
+      <app-appareil  *ngFor="let appareil of appareils"
+                     [appareilName]="appareil.name"
+                     [appareilStatus]="appareil.status"></app-appareil>
       <button class="btn btn-success"
               [disabled]="!isAuth"
               (click)="onAllumer()">Tout allumer</button>
