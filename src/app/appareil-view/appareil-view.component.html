@@ -3,9 +3,11 @@
   <p>Mis à jour : {{ lastUpdate | async | date: 'yMMMMEEEEd' | uppercase }}</p>
   <ul class="list-group">
     <app-appareil  *ngFor="let appareil of appareils; let i = index"
+                   [index]="i"
                    [appareilName]="appareil.name"
                    [appareilStatus]="appareil.status"
-                   [index]="i"></app-appareil>
+                   [id]="appareil.id"
+                   ></app-appareil>
   </ul>
   <button class="btn btn-success"
           [disabled]="!isAuth"
