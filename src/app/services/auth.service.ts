@@ -1,6 +1,6 @@
 
 
-export class Authservice{
+export class AuthService{
 
   isAuth = false;
 
